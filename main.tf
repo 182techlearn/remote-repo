@@ -8,6 +8,6 @@ data "aws_ami" "latest_ami" {
 }
 
 resource "ec2_instance" "myec2" {
-  ami           = var.aws_ami.latest_ami.id
+  ami           = data.aws_ami.latest_ami.id
   instance_type = var.instance_type
 }
